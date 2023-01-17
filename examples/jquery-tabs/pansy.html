@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>jQuery Tabs Widget Example</title>
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+		<link href="js.css" rel="stylesheet">
+		<link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
+        <style>
+			.ui-widget-header {
+                font-family:cursive;
+				background:#b9cd6d;
+				border: 1px solid #b9cd6d;
+				color: #FFFFFF;
+				font-weight: bold;
+			}
+            .ui-corner-top, .ui-corner-all {
+                border-radius: 10px; 
+				}
+            header, footer {
+                padding: 1px;
+                font-family: cursive;
+                text-align: center;
+                margin: 4% 10%;
+				}
+			#gallery > img {
+				width: 18%;
+				}
+        </style>
+		<script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+		<script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        <script>
+        // execute when the html has all been loaded
+            $(document).ready(function() {
+                // create the options for the tabs widget
+                var tabOpts = {
+                    collapsible: true,
+                    active: false
+                }
+                // apply the tabs widget to the tabs div
+				$( "#tabs" ).tabs(tabOpts);
+
+                // Set the options for the datepicker
+                var pickerOpts = {
+                    appendText : " mm/dd/yyyy",
+                    defaultDate : "+5",
+                    showOtherMonths : true
+                };
+                // call the datepicker widget for the sdate field
+                $('#sdate').datepicker(pickerOpts);
+
+                //create the list for the autocomplete form field
+                cartoonList = ["Homer Simpson", "Fred Flintstone", "Bugs Bunny", "Betty Boop", "Daffy Duck", "Pink Panther", "Mickey Mouse", "Donald Duck", "Tweety Bird", "Tom and Jerry"];
+                // call the autocomplete function
+                $('#favCartoon').autocomplete({
+                    source : cartoonList
+                });
+            });
+        </script>
+	</head>
+	<body>
+		<div id="container">
+			<header>
+				<h1>Patti's Posies</h1>
+			</header>
+			<nav>
+				<p><a href="index.html">Home</a> | <a href="orderform.html">Place an Order</a> | <a href="mums.html">Mums</a> | <a href="pansy.html">Pansies</a></p>
+			</nav>
+				
+				<h2 id="pltTitle">Pansies</h2>
+
+			<div id="tabs">
+				<ul>
+					<li><a href="#desc">Plant Overview</a></li>
+					<li><a href="#details">Plant Details</a></li>
+					<li><a href="#gallery">Image Gallery</a></li>
+				</ul>
+				<div id="desc">
+					<h3>Enjoy happy and fragrant faces in your fall garden! </h3>
+					<p><img src="pansy1.jpg" alt="Rose pansy" width="220" height="260" id="lgImg"> These colorful flowers bloom in winter when the rest of your landscape is brown and dull.</p>
+					<p>Pansies come in a full range of colors from pastels to primary tones. Some varieties are trailing and work well in hanging baskets and containers.</p>
+					<p>Pansy blooms are edible so add some to your kitchen garden for delicious and beautiful salads!</p>
+					<p>Pansies are excellent companion plants for spring flowering bulbs like tulips and daffodils.</p>
+				</div>
+				<div id="details">
+					<table>
+						<tr><td>Plant Habit or Use:</td><td> Low growing, spreading habit, some are trailing</td></tr>
+						<tr><td>Exposure:</td><td> Full to Partial Sun</td></tr>
+						<tr><td>Flower Color:</td><td> Red, Pink, White, Yellow, Orange, Rust, Purple</td></tr>
+						<tr><td>Blooming Period:</td><td> Fall - Winter </td></tr>
+						<tr><td>Height:</td><td> 6 inches</td></tr>
+						<tr><td>Width: </td><td> 8 to 10 inches</td></tr>
+						<tr><td>Plant Character:</td><td>Annual</td></tr>
+						<tr><td>Water Requirements:</td><td> Medium</td></tr>
+						<tr><td>Zone:</td><td> 3-9 </td></tr>
+						<tr><td>Uses:</td><td> Beds, Borders, Container, Cut Flowers </td></tr>
+					</table>
+				</div>
+				<div id="gallery">
+					<img src="pansy1.jpg" alt="Rose pansy">
+					<img src="pansy2.jpg" alt="Multicolored pansies">
+					<img src="pansy3.jpg" alt="Yellow Dark Face Pansy">
+					<img src="pansy4.jpg" alt="Ruffled pansy mix">
+					<img src="pansy5.jpg" alt="Pastel pansy mix">
+				</div>
+			</div>
+			<hr>
+			<footer>
+				<p><small id="copy">&copy; Copyright  by Patti Burks </small></p>
+			</footer>
+		</div>
+	</body>
+</html>

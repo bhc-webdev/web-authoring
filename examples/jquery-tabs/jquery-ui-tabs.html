@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>jQuery UI</title>
+		<link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
+        <style>
+			.ui-widget-header {
+                font-family:cursive;
+				background:#b9cd6d;
+				border: 1px solid #b9cd6d;
+				color: #FFFFFF;
+				font-weight: bold;
+			}
+            .ui-corner-top, .ui-corner-all {
+                border-radius: 10px; 
+				}
+            header, footer {
+                padding: 1px;
+                font-family: cursive;
+                text-align: center;
+                margin: 50px 10%;
+				}
+        </style>
+		<script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+		<script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        <script>
+        // execute when the html has all been loaded
+            $(document).ready(function() {
+                // create the options for the tabs widget
+                var tabOpts = {
+                    collapsible: true,
+                    active: false
+                }
+                // apply the tabs widget to the tabs div
+				$( "#tabs" ).tabs(tabOpts);
+
+                // Set the options for the datepicker
+                var pickerOpts = {
+                    appendText : " mm/dd/yyyy",
+                    defaultDate : "+5",
+                    showOtherMonths : true
+                };
+                // call the datepicker widget for the sdate field
+                $('#sdate').datepicker(pickerOpts);
+
+                //create the list for the autocomplete form field
+                cartoonList = ["Homer Simpson", "Fred Flintstone", "Bugs Bunny", "Betty Boop", "Daffy Duck", "Pink Panther", "Mickey Mouse", "Donald Duck", "Tweety Bird", "Tom and Jerry"];
+                // call the autocomplete function
+                $('#favCartoon').autocomplete({
+                    source : cartoonList
+                });
+            });
+        </script>
+    </head>
+    <body>
+            <header>
+                <h1>jQuery UI Tabs Widget</h1>
+            </header>
+			<div id = "tabs">
+				<ul>
+					<li><a href = "#tab-1">Tab 1: Text</a></li>
+					<li><a href = "#tab-2">Tab 2: Datepicker</a></li>
+					<li><a href = "#tab-3">Tab 3: Autocomplete</a></li>
+				</ul>
+				<div id = "tab-1">
+					<p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velited ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>	
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				</div>
+				<div id = "tab-2">
+					<h3>Datepicker Example</h3>
+					<form method="get" action="#">
+                    <p><label for="sdate">Please enter a date</label>
+                       <input type="text" id="sdate" name="sdate"></p>
+                    <p><input type="submit" value="Send Date"></p>
+                    </form>
+				</div>
+				<div id = "tab-3">
+					<h3>Autocomplete Example</h3>
+					<form method="get" action="#">
+                    <p><label for="favCartoon">Who is your favorite Cartoon Character? </label>
+                       <input type="text" id="favCartoon" name="favCartoon"></p>
+                    <p><input type="submit" value="Send"></p>
+                    </form>
+				</div>
+			</div>
+            <footer>
+                <p>Tabs Widget Example</p>
+            </footer>
+    </body>
+</html>

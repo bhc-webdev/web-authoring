@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Floated Elements Example</title>
+        <style>
+            /* structural elements styles */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            html {
+                -ms-text-size-adjust: 100%;
+                -webkit-text-size-adjust: 100%
+            }
+
+            *,
+            *::before,
+            *::after {
+                box-sizing: inherit;
+            }
+
+            body {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background-color: whitesmoke;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            main {
+                display: flex;
+                flex-direction: column;
+                color: #202020;
+            }
+
+            .content {
+                margin: 2em 0;
+                padding: 8px 10vw;
+            }
+
+            header {
+                background-color: #2E6C85;
+                width: 100%;
+            }
+
+            /* heading styles */
+            h1 {
+                text-align: center;
+                font-family: cursive;
+                font-size: 5vw;
+                color: #B2D732;
+                text-shadow: 3px 2px 5px #202020;
+                padding: 2vw;
+                margin: 0px;
+            }
+
+            h2,
+            h3,
+            h4,
+            h5,
+            dt,
+            legend {
+                color: #C04402;
+                font-family: cursive;
+                padding-top: 1em;
+            }
+
+            p {
+                line-height: 1.35;
+                margin-top: 1em;
+            }
+
+            footer {
+                padding: 1vw;
+                text-align: center;
+                background-color: #092834;
+                color: #B2D732;
+                width: 100%;
+            }
+
+            footer h3 {
+                color: #B2D732
+            }
+
+            /* figures and images */
+            .diagonal-box {
+                position: relative;
+                margin-top: 1vw;
+                margin-bottom: 6vh;
+            }
+
+            .diagonal-box::before {
+                content: "";
+                position: absolute;
+                height: 18em;
+                top: 0;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                background-color: #B2D732;
+                -webkit-transform: skewY(-6deg);
+                -moz-transform: skewY(-6deg);
+                -o-transform: skewY(-6deg);
+                -ms-transform: skewY(-6deg);
+                transform: skewY(-6deg);
+            }
+
+            article {
+                display: flex;
+                max-width: 80vw;
+                margin: 0 auto;
+                padding-top: 5em;
+                position: relative;
+            }
+
+            article>figure {
+                padding: 0 2em;
+            }
+
+            .float-right {
+                flex-flow: row-reverse;
+            }
+
+            figure img {
+                display: block;
+                height: 185px;
+                width: 185px;
+            }
+
+            figcaption {
+                color: #2E6C85;
+            }
+
+            /* link styles */
+            nav {
+                display: flex;
+                justify-content: flex-start;
+                width: 100%;
+                font-family: 'Architects Daughter', cursive;
+                background-color: #B2D732;
+                overflow: hidden;
+                position: -webkit-sticky;
+                position: sticky;
+                top: 0;
+            }
+
+            nav a {
+                padding: 10px;
+                color: #C04402;
+                text-decoration: none;
+                text-align: center;
+                font-size: 2vw;
+            }
+
+            nav a:visited {
+                color: #092834;
+            }
+
+            nav a:hover {
+                color: #F0F7D4;
+                background-color: #092834;
+            }
+
+            nav a.active {
+                color: #2E6C85;
+                background-color: whitesmoke;
+            }
+
+            a {
+                color: #092834;
+            }
+
+            a:visited {
+                color: #092834;
+                text-decoration: none;
+            }
+
+            a:hover {
+                color: #2E6C85;
+                text-decoration: none;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <h1>CSS3 Transformations Demo</h1>
+        </header>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Products</a>
+            <a href="#">About Us</a>
+        </nav>
+        <main>
+            <section class="content">
+                <h2>Single Column Layout</h2>
+                <p>This layout uses the default alignment of stacked articles which are used as containers to hold the images and their related textual content. Within each article (container) is an image wrapped with a figure tag that is floated. Every other image is floated to the opposite (left or right) side of the container using a CSS rule:</p>
+                <pre><code>
+        .float-right {
+            flex-flow: row-reverse;
+        }</code></pre>
+                <p>Since I am using FLexbox to control the layout, it is fairly easy to reverse the order of the items within the box.</p>
+            </section>
+            <section class="diagonal-box">
+                <article>
+                    <figure>
+                        <img src="https://mywebtraining.net/articles/images/cat1.jpg" alt="Sample Image of a cat Floated within a container" />
+                        <figcaption>Cat Example</figcaption>
+                    </figure>
+                    <section>
+                        <h3>Transform: skewY(-6deg)</h3>
+                        <p>The code that allows for the color background to be shown on a slant is a CSS3 property called transform. There are several values for this property. The one used here is skewY and is applied to a background element separate from the content.</p>
+                    </section>
+                </article>
+            </section>
+                <section class="content">
+                    <h3>Transform Code</h3>
+                    <p>The code for the transformation is shown below. The .diagonal-box class assigns the element to a relative position. Then we apply a rule ::before that creates the skewed diagonal-box with a background color.</p>
+                    <pre><code>
+                        .diagonal-box {
+                            position: relative;
+                        }
+            
+                        .diagonal-box::before {
+                            content: "";
+                            position: absolute;
+                            height: 18em;
+                            top: 0;
+                            right: 0;
+                            left: 0;
+                            bottom: 0;
+                            background-color: #B2D732;
+                            transform: skewY(-6deg);
+                        }</code></pre>
+                </section>
+            <section>
+                <article class="float-right">
+                    <figure>
+                        <img src="https://mywebtraining.net/articles/images/dog1.jpg" alt="Sample Image of a dog Floated within a container" />
+                        <figcaption>Dog Example</figcaption>
+                    </figure>
+                    <section>
+                        <h3>BOW WOW!</h3>
+                        <p>This is the descriptive paragraph of the dog image used here to demonstrate the use of floats within containers to enhance the layouts of web pages to improve design with enhanced alignment and proximity. So cute!</p>
+                    </section>
+                </article>
+            </section>
+
+        </main>
+        <footer>
+            <h3>My Footer &copy; 2020</h3>
+        </footer>
+    </body>
+
+</html>

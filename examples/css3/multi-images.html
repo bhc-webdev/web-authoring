@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multiple Image Example</title>
+    <style>
+      #multi-images {
+        width: 100%;
+        height: 350px;
+        background: lightblue url(images/multi-image.jpg) no-repeat 50% center;
+        background: url(images/easter-bunny-md.png) no-repeat 80% 5%,
+          url(images/floral-design-easter-eggs-in-grass-sm.png) no-repeat bottom right,
+          url(images/grass.png) repeat-x bottom left,
+          url(images/dog-ears-sm.png) no-repeat bottom left,
+          url(images/background.png) repeat-x bottom left,
+          linear-gradient(to bottom, skyblue, green);
+      }
+
+      @media screen and (max-width: 600px) {
+        #multi-images {
+          max-width: 100%;
+          height: 350px;
+          background: lightblue url(images/multi-image.jpg) no-repeat 50% center;
+          background: url(images/easter-bunny-md.png) no-repeat 50% 5%,
+            url(images/floral-design-easter-eggs-in-grass-sm.png) no-repeat bottom right,
+            url(images/grass.png) repeat-x bottom left,
+            url(images/background.png) repeat-x bottom left,
+            linear-gradient(to bottom, skyblue, green);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="multi-images">
+      <h1>Multiple Image Example</h1>
+    </div>
+  </body>
+
+</html>

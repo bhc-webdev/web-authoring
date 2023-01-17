@@ -1,0 +1,13 @@
+main {
+	position: relative;
+	box-sizing: border-box;
+}
+section {
+	float: left;
+	width: 33.3%;
+	box-sizing: border-box;
+	padding: 2em;
+}
+footer {
+	clear: both;
+}

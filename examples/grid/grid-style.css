@@ -1,0 +1,37 @@
+main {
+  display: grid;
+  grid-template-rows: [header-start] 1fr [content-start] auto [footer-start] 1fr;
+  grid-template-columns: [nav] 1fr [section] 3fr [aside] 1fr;
+  grid-template-areas:
+    "header header header"
+	"nav section aside"
+	"footer footer footer";
+}
+header {
+  grid-area: header;
+}
+footer {
+  grid-area: footer;
+}
+nav {
+  grid-area: nav;
+	padding: 2em;
+	border-right: 2px solid red;
+}
+nav li {
+	list-style: none;
+}
+section {
+  grid-area: section;
+	padding: 2em;
+	margin: 1em;
+	border-right: 2px solid green;
+}
+aside {
+  grid-area: aside;
+	padding: 2em;
+}
+th {
+	width: auto;
+	padding: 1em;
+}

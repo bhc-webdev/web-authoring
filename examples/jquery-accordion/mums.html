@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>jQuery Accordian Example</title>
+	<meta name="viewport" content="width=device-width; initial-scale=1.0">
+	<link href="js.css" rel="stylesheet">
+	<link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
+	<style>
+		.ui-corner-all {
+			border-radius: 15px;
+		}
+		#gallery {
+		    text-align: center;
+		}
+		dt {
+			background-color: seagreen;
+			border: medium outset darkgreen;
+			border-radius: 10px;
+			color: cornsilk;
+			Font-weight: bold;
+			font-variant:small-caps;	
+			text-align: center;
+			padding: .25em;
+			margin: .5em 0;
+		}
+		#zonetip {
+			border-bottom: thin dashed darkgreen;	
+		}
+		#gallery > img {
+			width: 18%;
+		}
+		#mumpic {
+			float: left;
+			margin: 0 4%;
+		}
+	</style>
+	<script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+	<script>
+	// execute when the html has all been loaded
+		$(document).ready(function() {
+			// create the options for the accordion widget
+			var accOpts = {
+				collapsible: true,
+				active: false
+			};
+			// apply the accordion widget to the accordion div
+			$('#accordionDiv').accordion(accOpts);
+		   
+			// Set the options for the datepicker
+			var pickerOpts = {
+				appendText : " mm/dd/yyyy",
+				defaultDate : "+5",
+				showOtherMonths : true
+			};
+			// call the datepicker widget for the sdate field
+			$('#sdate').datepicker(pickerOpts);
+
+			//create the list for the autocomplete form field
+			cartoonList = ["Homer Simpson", "Fred Flintstone", "Bugs Bunny", "Betty Boop", "Daffy Duck", "Pink Panther", "Mickey Mouse", "Donald Duck", "Tweety Bird", "Tom and Jerry"];
+			// call the autocomplete function
+			$('#favCartoon').autocomplete({
+				source : cartoonList
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="container">
+		<header>
+			<h1>Patti's Posies</h1>
+		</header>
+		<nav>
+			<p><a href="index.html">Home</a> | <a href="orderform.html">Place an Order</a> | <a href="mums.html">Mums</a> | <a href="pansy.html">Pansies</a></p>
+		</nav>
+		<div id="main">
+			<h2 id="pltTitle">Mums</h2>
+			<h3>Color Explosion with Bright Fall Bloomers</h3>
+			<div id="accordionDiv">	
+				<h3><a href="#">Plant Overview</a></h3>
+				<div id="desc">
+					<p><img src="magenta_daisy_mum.jpg" alt="Magenta Daisy Mum" width="330" height="200" id="mumpic"></p>
+					<p>Garden Mums are a fall tradition in Texas and no wonder! Few plants put on such a spectacular show! Big blooming Mums in almost every color in the rainbow and they make an instant impact in any garden. Use them in garden beds, containers on the patio, or as showy border plants.</p>
+				</div>
+				<h3><a href="#">Plant Details</a></h3>
+				<div id="details">
+					<table>
+					<tr><td>Plant Habit or Use:</td><td> Showy Flowers</td></tr>
+					<tr><td>Exposure:</td><td>  Full to Partial Sun</td></tr>
+					<tr><td>Flower Color:</td><td>  Red, Pink, White, Yellow, Orange, Rust, Purple</td></tr>
+					<tr><td>Blooming Period:</td><td>  Fall</td></tr>
+					<tr><td>Height:</td><td>  1 to 2 feet</td></tr>
+					<tr><td>Width: </td><td> 12 to 20 inches</td></tr>
+					<tr><td>Plant  Character: </td><td>Perennial</td></tr>
+					<tr><td>Water Requirements: </td><td> Medium</td></tr>
+					<tr><td>Zone:</td><td>  3-9 </td></tr>
+					<tr><td>Uses:</td><td>  Beds, Borders, Container, Cut Flowers </td></tr>
+					</table>
+				</div>
+				<h3><a href="#">Photo Gallery</a></h3>
+				<div id="gallery">
+					<img src="yellow_pompom_mum.jpg" alt="Yellow Pom Pom Mum"  title="Yellow Pom Pom Mum"> 
+					<img src="purple_single_mum.jpg" alt="Purple Single Mum" title="Purple Single Mum"> 
+					<img src="white_double_mum.jpg" alt="White Double Mum" title="White Double Mum"> 
+					<img src="pink_single_mum.jpg" alt="Pink Single Mum" title="Pink Single Mum"> 
+					<img src="sunburst_daisy_mum.jpg" alt="Sunburst Daisy Mum" title="Sunburst Daisy Mum"> 
+				</div>
+			</div>
+			<hr>
+			<footer>
+				<p><small id="copy">&copy; Copyright  by Patti Burks </small></p>
+			</footer>
+		</div>
+	</div>
+</body>
+</html>

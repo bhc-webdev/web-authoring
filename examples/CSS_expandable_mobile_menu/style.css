@@ -1,0 +1,111 @@
+/*  CSS Document  */
+
+/*  This file was provided as part of a weekly web design tutorial series.
+	Sign-up for our newsletter, at http://codifydesign.com, to be notified
+	about each new episode of Creating Web Media
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto:900" rel="stylesheet');
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #d1dce2;
+	font-family:'Roboto Slab', serif;
+	font-size: 16px;
+	color: #2f2f2a;
+}
+
+p {
+	margin: 0 0 1em 0;
+}
+
+header {
+	margin: 0;
+	padding: 1px 0;
+	background: #000 url(images/banner.jpg) no-repeat center 0;
+	background-size: cover;
+	height: 130px;
+	position: relative;
+	overflow: hidden;
+}
+
+header h1 {
+	font-family: 'Roboto', sans-serif;
+	font-size: 5em;
+	line-height: 53px;
+	letter-spacing: 8px; 
+	color: rgba(200, 220, 234, 0.75);
+	font-weight: 900;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	left: 40px;
+	bottom: -2px;
+	text-transform: uppercase;
+}
+
+article {
+	margin: 20px 40px;
+	line-height: 1.5em;
+}
+
+nav {
+	background-color: #597994;
+	padding: 15px 15px 5px 40px;
+	color: #fff;
+}
+
+nav a {
+	color: #fff;
+	text-decoration: none;
+	display: block;
+	margin: 0 35px 0 0;
+	padding: 14px 0;
+	border-top: 1px dashed rgba(255,255,255,.2);
+}
+
+nav a:first-of-type {
+	border-top: none;
+}
+
+.menu-content {
+    font-family: 'Oswald', sans-serif; 
+    padding: 0 0 0 50px;
+}.collapsible-menu {
+/*    background-color: rgb(255, 255, 255);*/
+    padding: 0px 30px;
+    border-bottom: 3px solid #CDE700;
+    box-shadow: 1px 2px 3px rgba(0,0,0,0.2);
+}.collapsible-menu ul {
+    list-style-type: none;
+    padding: 0;
+}.collapsible-menu a {
+    display:block;
+    padding: 10px;
+    text-decoration: none;
+}
+.collapsible-menu label {
+    font-family: 'Sedgwick Ave Display', cursive;
+    font-size: 56px;
+    display: block;
+    cursor: pointer;
+    background: url(images/menu.png) no-repeat left center;
+    padding: 10px 0 10px 50px;
+}input#menu {
+    display: none;
+}
+input:checked + label {
+    background-image: url(images/redx_24.png);
+}
+.menu-content {
+    max-height: 0;
+    overflow: hidden;
+    font-family: 'Oswald', sans-serif; 
+    padding: 0 0 0 50px;
+}/* Toggle Effect */
+input:checked ~ label {
+    background-image: url(images/redx_24.png);
+}input:checked ~ .menu-content {
+    max-height: 100%;
+}

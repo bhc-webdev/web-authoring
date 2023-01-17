@@ -1,0 +1,63 @@
+header {
+	background-color: yellow;
+	border-radius: 15px;
+	margin: 1em 2%;
+}
+nav {
+	background-color: orange;
+	border-radius: 15px;
+	margin: 1em 2%;
+	padding: .25em;
+}
+article {
+	background-color: blue;
+	border-radius: 15px;
+	margin: 1em 2%;
+	padding: .5em;
+	color: white;
+}
+footer {
+	background-color: pink;
+	border-radius: 15px;
+	margin: 1em 2%;
+	padding: .5em;
+}
+body {
+	max-width: 1360px;
+	margin: 0 auto;
+}
+@media screen and (max-width: 480px) {
+	
+	h2 {
+		display: none;
+	}
+}
+@media screen and (max-width: 600px) {
+	nav ul {
+		display: none;
+	}
+}
+@media screen and (min-width: 601px) {
+	nav select {
+		display: none;
+	}
+	nav {
+		width: 20%;
+		box-sizing: border-box;
+		float: left;
+	}
+	article {
+		box-sizing: border-box;
+		width: 34%;
+		float: left;
+	}
+	footer {
+		clear: left;
+	}
+}
+@media screen and (min-width: 936px) {
+	article {
+		width: 24%;
+		margin: 1em .5%;
+	}
+}
