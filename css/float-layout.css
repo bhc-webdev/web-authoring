@@ -4,16 +4,9 @@ main {
 }
 section {
 	float: left;
-	width: 67%;
+	width: 33.3%;
 	box-sizing: border-box;
 	padding: 2em;
-}
-aside {
-	float: left;
-	width: 33%;
-	margin: auto;
-	box-sizing: border-box;
-	padding-left: 10%;
 }
 footer {
 	clear: both;

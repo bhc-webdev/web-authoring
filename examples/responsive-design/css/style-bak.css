@@ -1,0 +1,165 @@
+html {
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%
+}
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+body {
+	margin: 10px;
+	padding: 0px;
+}
+main {
+	background-color: whitesmoke;
+	color: #202020;
+	padding: 8px 16px;
+}
+.accent1a {
+	background-color: #347B98;
+	color: #B2D732;
+}
+.accent1b {
+	background-color: #092834;
+	color: #B2D732;
+}
+h1 {
+	font-family: 'Love Ya Like A Sister', cursive;
+	font-size: 5vw;
+	color: #B2D732;
+	text-align: center;
+	text-shadow: 3px 2px 5px #202020;
+	padding: 3vw;
+	margin: 0px;
+}
+h2, h3, h4, h5 {
+	color: #FC600A;
+	font-family: 'Architects Daughter', cursive;
+}
+p {
+	font-family: Arial, Helvetica, sans-serif;
+}
+header {
+	background-color: #347B98;
+	width: 100%;
+}
+footer {
+	text-align: center;
+	background-color: #092834;
+	width: 100%;
+	padding: 1vw;
+	color: #B2D732;
+	font-size: 1.5vw;
+}
+.error {
+	color: #FE2712;
+}
+table, th, td {
+	border: 1px solid #B2D732;
+	padding: 4px;
+	margin: 6px;
+	background-color: whitesmoke;
+}
+th {
+	width: 150px;
+	color: #347B98;
+}
+td.data {
+	text-align: center;
+}
+td {
+	color: #092834;
+}
+blockquote {
+	border-style: solid;
+	border-width: 0px 0px 0px 10px;
+	border-color: #B2D732;
+	font-size: 2vw;
+	padding: 15px;
+	overflow: hidden;
+	z-index: 2;
+}
+blockquote::first-line {
+	font-family: 'Love Ya Like A Sister', cursive;
+	font-size: 2.5vw;
+	color: #347B98;
+}
+a {
+	color: #092834;
+}
+a:visited {
+	color: #092834;
+	text-decoration: none;
+}
+a:hover {
+	color: #347B98; 
+	text-decoration: none;
+}
+nav {
+	font-family: 'Architects Daughter', cursive;
+	background-color: #B2D732;
+   overflow: hidden;
+}
+nav a {
+	padding: 10px;
+	color: #FC600A;
+	text-decoration: none;
+	line-height: 2.5;
+	text-align: center;
+	font-size: 2vw;
+}
+nav a:visited {
+	color: #092834;
+}
+nav a:hover {
+	color: #F0F7D4; 
+	background-color: #092834;
+}
+nav a.active {
+	color: #347B98;
+	background-color: whitesmoke;
+}
+
+/* Responsive navbar */
+/* Hide the link that should open and close the nav on small screens */
+nav .icon {
+    display: none;
+}
+ /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the nav (.icon) */
+ @media screen and (max-width: 600px) {
+	h1 {font-size: 7vw;}
+	nav a {font-size: 3vw;}
+	nav a:not(:first-child) {display: none;}
+	nav a.icon {
+	  float: right;
+	  display: block;
+	}
+	figure {margin: 2em auto;}
+}
+
+/* The "responsive" class is added to the nav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {
+	nav.responsive {position: relative;}
+	nav.responsive a.icon {
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+	nav.responsive a {
+		float: none;
+		display: block;
+		text-align: left;
+	}
+}
+
+/* Change the order of flex items */
+ @media screen and (max-width: 670px) {
+	#items {
+		order: 1; /* default is 0 */
+	}
+	#content {
+		order: 2; /* default is 0 */
+	}
+}
+

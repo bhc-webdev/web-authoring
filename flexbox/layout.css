@@ -1,0 +1,20 @@
+* {
+	box-sizing: border-box;
+}
+main {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+nav {
+	flex: 0 1 15%; /* <'none'> | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]*/
+	padding: 1em;
+}
+section {
+	flex: 0 1 60%; /* <'none'> | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]*/
+	padding: 1em;
+}
+aside {
+	flex: 0 1 25%; /* <'none'> | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]*/
+	padding: 1em;
+}

@@ -1,0 +1,147 @@
+* {
+   margin: 0;
+   padding: 0;
+}
+html {
+	margin: 0;
+	padding: 0;
+   box-sizing: border-box;
+}
+main {
+	padding: 8px 16px;
+   width: 80vw;
+   float: right;
+	background-color: whitesmoke;
+}
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.col3 {
+  width: 75vw;
+  order: 3;
+}
+.col2 {
+  width: 25vw;
+  order: 2;
+}
+.col1 {
+  width: 50vw;
+  order: 1;
+}
+footer {
+   padding: 1vw;
+}
+.clearfix {
+   clear: both;
+}
+
+/* responsive design */
+#toggleButton {
+	background-color: #2E6C85;
+	color: whitesmoke;
+	font-size: 3.5vw;
+	padding: 6px;
+	border: none;
+}
+.topnav {
+   font-family: 'Architects Daughter', cursive;
+   overflow: hidden;
+   background-color: #B2D732;
+   width: 18vw;
+   float: left;
+ }
+ 
+ .topnav a {
+   display: block;
+   color: #C04402;
+   text-align: left;
+   padding: 10px;
+   text-decoration: none;
+   font-size: 3vw;
+ }
+  
+ .topnav a:hover {
+   color: #F0F7D4; 
+   background-color: #092834;
+ }
+ 
+ .topnav a.active {
+   color: #2E6C85;
+   background-color: whitesmoke;
+ }
+ 
+ .topnav .icon {
+   display: none;
+ }
+
+ @media screen and (max-width: 1070px) {
+   .topnav {
+     width: 100%;
+    }
+    .topnav a {
+      float: left;
+      display: block;
+      color: #C04402;
+      text-align: center;
+      padding: 10px;
+      text-decoration: none;
+      font-size: 3vw;
+    }
+    main {
+      width: 100%;
+    }
+    figure {
+      max-width: 28vw;
+    }
+    .col3 {
+      width: 95vw;
+      order: 3;
+    }
+    .col2 {
+      width: 45vw;
+      order: 2;
+    }
+    .col1 {
+      width: 45vw;
+      order: 1;
+    }
+  }
+
+  @media screen and (max-width: 720px) {
+   .topnav a:not(:first-child) {display: none;}
+   .topnav a.icon {
+     float: right;
+     display: block;
+   }
+ }
+ 
+ @media screen and (max-width: 720px) {
+   .topnav.responsive {position: relative;}
+   .topnav.responsive .icon {
+     position: absolute;
+     right: 0;
+     top: 0;
+   }
+   .topnav.responsive a {
+     float: none;
+     display: block;
+     text-align: left;
+   }
+   figure {
+      max-width: 100%;
+      float: none;
+   }
+   .flex-container {
+     display: contents;
+   }
+   .col2 {
+    width: 95vw;
+    order: 2;
+  }
+  .col1 {
+    width: 95vw;
+    order: 1;
+  }
+}

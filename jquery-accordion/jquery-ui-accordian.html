@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>jQuery UI</title>
+             <meta name="viewport" content="width=device-width; initial-scale=1.0" />
+		<link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
+<!--		 <link type="text/css" href="jquery-ui-1.12.1/jquery-ui.theme.css" rel="Stylesheet" />  -->
+        <style>
+            .ui-accordion {
+                width: 80%;
+                margin: 0 auto;
+            }
+            .ui-accordion-header {
+                font-family:cursive;
+                font-weight: bold;
+                text-align: center;
+            }
+            .ui-corner-top, .ui-corner-all {
+                border-radius: 10px;
+            }
+            header, footer {
+               
+                padding: 1px;
+                font-family: cursive;
+                text-align: center;
+                margin: 50px 10%;
+            }
+        </style>
+      <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+      <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<!--       <script type="text/javascript" src="jquery-ui-1.12.1/jquery-ui.js"></script>
+        <script type="text/javascript" src="js/jquery-ui-1.9.1.custom.min.js"></script> -->
+        <script>
+        // execute when the html has all been loaded
+            $(document).ready(function() {
+                // create the options for the accordion widget
+                var accOpts = {
+                    collapsible: true,
+                    active: false
+                }
+                // apply the accordion widget to the accordion div
+                $('#accordionDiv').accordion(accOpts);
+               
+                // Set the options for the datepicker
+                var pickerOpts = {
+                    appendText : "mm/dd/yyyy",
+                    defaultDate : "+5",
+                    showOtherMonths : true
+                };
+                // call the datepicker widget for the sdate field
+                $('#sdate').datepicker(pickerOpts);
+
+                //create the list for the autocomplete form field
+                cartoonList = ["Homer Simpson", "Fred Flintstone", "Bugs Bunny", "Betty Boop", "Daffy Duck", "Pink Panther", "Mickey Mouse", "Donald Duck", "Tweety Bird", "Tom and Jerry"];
+                // call the autocomplete function
+                $('#favCartoon').autocomplete({
+                    source : cartoonList
+                });
+            });
+        </script>
+    </head>
+    <body>
+            <header>
+                <h1>jQuery UI Accordion</h1>
+            </header>
+            <div id="accordionDiv">
+                <h3><a href="#">Section 1</a></h3>
+                <div>
+					<p>Content for section 1</p>
+					<p>More Content for section 1</p>
+				</div>
+                <h3><a href="#">Datepicker Example</a></h3>
+                <div>
+					<form method="get" action="#">
+                    <p><label for="sdate">Please enter a date</label>
+                       <input type="text" id="sdate" name="sdate"></p>
+                    <p><input type="submit" value="Send Date"></p>
+                    </form>
+				</div>
+                <h3><a href="#">Autocomplete Example</a></h3>
+                <div>
+					<form method="get" action="#">
+                    <p><label for="favCartoon">Who is your favorite Cartoon Character</label>
+                       <input type="text" id="favCartoon" name="favCartoon"></p>
+                    <p><input type="submit" value="Send"></p>
+                    </form>
+				</div>
+            </div>
+            <footer>
+                <p>Accordion Lesson Example</p>
+            </footer>
+    </body>
+</html>
